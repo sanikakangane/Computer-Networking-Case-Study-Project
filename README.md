@@ -2,6 +2,8 @@
 
 A Cisco Packet Tracer case study focused on designing and implementing a structured IPv4 network for Gatewick Costume & Prop Rental House, including departmental segmentation, inter-VLAN routing, and WAN connectivity to a remote Prop Workshop.
 
+🔗 **[Download Packet Tracer Project (.pkt)](https://github.com/sanikakangane/Computer-Networking-Case-Study-Project/raw/refs/heads/main/GateWick-Project/GateWick-CN-Project.pkt)**
+
 ## Project Overview
 
 The project designs a computer network for four departments:
@@ -36,6 +38,8 @@ The network uses an Extended Star topology with a central switch, department swi
 - Cisco IOS CLI
 
 ## Network Design
+
+The network follows an Extended Star topology in which departmental switches connect to a central core switch.
 
 ### VLAN and IP Addressing Plan
 
@@ -75,18 +79,23 @@ Nine PCs are distributed across the four departments.
 ## Key Implementations
 
 ### 1. VLAN Segmentation
+
 Each department is assigned a separate VLAN to create distinct logical broadcast domains.
 
 ### 2. Trunk Links
+
 IEEE 802.1Q trunk links connect the core switch to department switches and the main router, carrying traffic for multiple VLANs.
 
 ### 3. Router-on-a-Stick
+
 Subinterfaces on R0-Main provide default gateways and enable communication between the four departmental VLANs.
 
 ### 4. VLSM
+
 The `10.200.0.0/22` address block is divided into subnet sizes suited to the departments' host requirements, with additional address space retained for future expansion.
 
 ### 5. WAN Connectivity
+
 A point-to-point connection links R0-Main to R1-Workshop using the `10.200.0.128/30` subnet.
 
 ## Verification and Testing
